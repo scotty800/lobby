@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0fa3372b01365964ea190a5c88d84c10
+timeCreated: 1487724401
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Materials+Texture/FireLadder.mat
+  uploadId: 163527

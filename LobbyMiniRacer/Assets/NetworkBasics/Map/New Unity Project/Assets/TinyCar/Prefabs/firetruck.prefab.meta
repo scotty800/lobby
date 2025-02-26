@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c0b62af4e2aa1784997b0d8342bda36e
+timeCreated: 1487724157
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Prefabs/firetruck.prefab
+  uploadId: 163527

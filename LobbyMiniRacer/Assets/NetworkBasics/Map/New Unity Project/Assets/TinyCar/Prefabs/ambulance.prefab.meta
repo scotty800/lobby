@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c6fd786275d4cdb4abd8effce60cf681
+timeCreated: 1487724151
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Prefabs/ambulance.prefab
+  uploadId: 163527

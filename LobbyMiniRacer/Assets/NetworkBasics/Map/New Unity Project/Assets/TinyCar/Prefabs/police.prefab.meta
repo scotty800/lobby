@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 47e33790ee90932409a8029536a21939
+timeCreated: 1487724159
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Prefabs/police.prefab
+  uploadId: 163527

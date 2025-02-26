@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bb25a14387962ff46844999c484e0102
+timeCreated: 1487724318
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/DemoTinyCars.unity
+  uploadId: 163527

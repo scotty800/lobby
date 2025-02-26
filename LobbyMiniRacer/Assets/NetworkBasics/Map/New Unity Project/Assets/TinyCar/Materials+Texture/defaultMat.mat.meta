@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0979d65f41ec85b47ab377b1b0afc4a2
+timeCreated: 1487721726
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Materials+Texture/defaultMat.mat
+  uploadId: 163527

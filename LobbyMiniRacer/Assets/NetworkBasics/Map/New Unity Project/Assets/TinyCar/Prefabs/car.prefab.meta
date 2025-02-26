@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e9998600c6a59394c8170891b0cf1f22
+timeCreated: 1487724155
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Prefabs/car.prefab
+  uploadId: 163527

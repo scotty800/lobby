@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 067c6a3954aec2241850a3bbbf3b0773
+timeCreated: 1487724161
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 83703
+  packageName: 7 Tiny Cars
+  packageVersion: 1.0
+  assetPath: Assets/TinyCar/Prefabs/taxi.prefab
+  uploadId: 163527
