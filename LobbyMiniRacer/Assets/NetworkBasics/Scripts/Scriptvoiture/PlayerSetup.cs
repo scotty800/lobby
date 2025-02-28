@@ -5,28 +5,30 @@ public class PlayerSetup : NetworkBehaviour
 {
     [SerializeField]
     private Behaviour[] componentsToDisable; // Tableau des composants à désactiver
-    private Camera sceneCamera;
+
+    private Camera sceneCamera; // Référence à la caméra principale
 
     // Start est appelé une fois avant la première mise à jour
     void Start()
     {
-        Debug.Log("PlayerSetup Start() appelé"); // Log pour suivre l'exécution
+        Debug.Log($"PlayerSetup Start() appelé pour {gameObject.name}");
 
+        // Désactiver les composants pour les autres joueurs
         if (!isLocalPlayer)
         {
             Debug.Log($"{gameObject.name} n'est pas le joueur local, désactivation des composants...");
-            // Vérification de la taille du tableau et des éléments avant de désactiver
+
             if (componentsToDisable != null)
             {
-                for (int i = 0; i < componentsToDisable.Length; i++)
+                foreach (var component in componentsToDisable)
                 {
-                    if (componentsToDisable[i] != null) // Vérifie si le composant n'est pas null
+                    if (component != null && component.enabled) // Vérifie si le composant est actif
                     {
-                        componentsToDisable[i].enabled = false;
+                        component.enabled = false;
                     }
                     else
                     {
-                        Debug.LogWarning($"componentsToDisable[{i}] est null sur {gameObject.name}");
+                        Debug.LogWarning($"Un composant dans componentsToDisable est null ou déjà désactivé sur {gameObject.name}");
                     }
                 }
             }
@@ -38,22 +40,31 @@ public class PlayerSetup : NetworkBehaviour
         else
         {
             Debug.Log($"{gameObject.name} est le joueur local, désactivation de la caméra de la scène...");
-            sceneCamera = Camera.main; // Obtient la caméra principale
 
-            if (sceneCamera == null)
-            {
-                Debug.LogWarning("Aucune caméra avec le tag 'MainCamera' trouvée dans la scène.");
-            }
-            else
-            {
-                sceneCamera.gameObject.SetActive(false);
-            }
+            // Désactiver la caméra principale
+            DisableSceneCamera();
         }
     }
 
-    private void OnDisable()
+    // Désactive la caméra principale
+    private void DisableSceneCamera()
     {
-        Debug.Log($"{gameObject.name} est désactivé, réactivation de la caméra de la scène...");
+        sceneCamera = Camera.main; // Obtient la caméra principale
+
+        if (sceneCamera == null)
+        {
+            Debug.LogWarning("Aucune caméra avec le tag 'MainCamera' trouvée dans la scène.");
+        }
+        else
+        {
+            sceneCamera.gameObject.SetActive(false);
+        }
+    }
+
+    // Réactive la caméra principale lorsque l'objet est détruit
+    private void OnDestroy()
+    {
+        Debug.Log($"{gameObject.name} est détruit, réactivation de la caméra de la scène...");
 
         if (sceneCamera != null)
         {
@@ -61,6 +72,3 @@ public class PlayerSetup : NetworkBehaviour
         }
     }
 }
-
-
-

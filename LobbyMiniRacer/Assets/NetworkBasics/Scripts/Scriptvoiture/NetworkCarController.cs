@@ -12,8 +12,8 @@ namespace MyCarController
         private Quaternion lastRotation;
         private float positionThreshold = 0.01f; // Très petit seuil pour détecter les changements
         private float rotationThreshold = 0.1f;  // Très petit seuil pour détecter les rotations
-        private float syncRate = 0.01f;          // Fréquence élevée (50 fois par seconde)
-        
+        private float syncRate = 0.1f;          // Fréquence plus modérée (10 fois par seconde)
+
         private float lastSyncTimeLocal; // Renommé pour éviter le conflit avec un champ parent
 
         private Rigidbody rb;
@@ -36,10 +36,12 @@ namespace MyCarController
                 // Vérifier si un changement significatif a eu lieu
                 bool positionChanged = Vector3.Distance(lastPosition, transform.position) > positionThreshold;
                 bool rotationChanged = Quaternion.Angle(lastRotation, transform.rotation) > rotationThreshold;
-                
-                if (positionChanged || rotationChanged)
+
+                // Vérifier la fréquence de synchronisation
+                if ((positionChanged || rotationChanged) && Time.time - lastSyncTimeLocal >= syncRate)
                 {
                     CmdUpdateCarTransform(transform.position, transform.rotation);
+                    lastSyncTimeLocal = Time.time;
                     lastPosition = transform.position;
                     lastRotation = transform.rotation;
                 }
@@ -50,7 +52,6 @@ namespace MyCarController
                 InstantSync();
             }
         }
-        
 
         [Command]
         void CmdUpdateCarTransform(Vector3 position, Quaternion rotation)
@@ -66,7 +67,7 @@ namespace MyCarController
             {
                 // Normalisation du quaternion avant de l'appliquer
                 syncedRotation = Quaternion.Normalize(syncedRotation);
-                
+
                 // Appliquer directement la position et la rotation synchronisées
                 transform.position = syncedPosition;
                 transform.rotation = syncedRotation;
@@ -86,4 +87,3 @@ namespace MyCarController
         }
     }
 }
-

@@ -236,5 +236,6 @@ namespace MirrorBasics
         {
             // Mettre à jour l'UI si nécessaire
         }
+
     }
 }
